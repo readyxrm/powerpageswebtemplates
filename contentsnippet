@@ -1,0 +1,27 @@
+{% comment %}
+Content Snippet Custom Component
+Nick Doelman, @readyxrm
+
+Create a manifest to allow component to be added via the design studio.
+It will accept the content snippet name as a parameter.
+The tables property allows makers to navigate directly to the data workspace.
+{% endcomment %}
+
+{% manifest %} 
+    { 
+    "type": "Functional", 
+    "displayName": "Content Snippet", 
+    "description": "This will insert a content snippet.", 
+    "tables": ["mspp_contentsnippet"], 
+    "params": [ 
+        { 
+        "id": "snippet", 
+        "displayName": "Content Snippet", 
+        "description": "The content snippet to insert on this page." 
+        }] 
+    } 
+{% endmanifest %} 
+
+{% comment %} Simply display the content snippet on the page. {% endcomment %}
+
+{{ snippets[snippet] }}
